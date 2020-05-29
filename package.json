@@ -1,0 +1,23 @@
+{
+  "name": "ups_plataformas_web_examen",
+  "version": "1.0.0",
+  "description": "Examen Plataformas Web Primer Parcial",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonelparrales22/UPS_Plataformas_Web_Examen.git"
+  },
+  "author": "Leonel Parrales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonelparrales22/UPS_Plataformas_Web_Examen/issues"
+  },
+  "homepage": "https://github.com/leonelparrales22/UPS_Plataformas_Web_Examen#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "yargs": "^15.3.1"
+  }
+}
