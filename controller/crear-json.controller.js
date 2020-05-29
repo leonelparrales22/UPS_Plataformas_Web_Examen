@@ -1,5 +1,4 @@
 const fs = require("fs");
-let datos = [];
 let crearArchivo = (data, anio) => {
   return new Promise((resolve, reject) => {
     if (!fs.existsSync("resultados")) {
