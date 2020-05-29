@@ -1,27 +1,24 @@
-const fs = require('fs');
+const fs = require("fs");
 let datos = [];
-let crearArchivo = (paisesMay, pmedia, paisesMen, medGlob, top, nomArch) => {
-    return new Promise((resolve, reject) => {
-        datos.push('Media Global: ');
-        datos.push(medGlob);
-        datos.push(' Media Pais: ');
-        datos.push(pmedia);
-        datos.push(' Paises por encima de la Suscripcion: ');
-        datos.push(paisesMay);
-        datos.push(' Paises por debajo de la Suscripcion: ');
-        datos.push(paisesMen);
-        datos.push(' TOP-5: ');
-        datos.push(top);
-        console.log(`Nombre del archivo ${nomArch}`);
-        let data = JSON.stringify(datos);
-        fs.writeFile(`resultados/${nomArch}.json`, data, (err) => {
-            if (err)
-                reject(err);
-            else
-                resolve(`EL archivo del pais ${pmedia[1]} se a Guardado`);
-        });
+let crearArchivo = (data, anio) => {
+  return new Promise((resolve, reject) => {
+    if (!fs.existsSync("resultados")) {
+      fs.mkdirSync("resultados");
+    }
+    plantilla = `Datos: ${data.mediaPais[3]}\n`;
+    plantilla += `País: ${data.mediaPais[1]}\n`;
+    plantilla += `Año: ${anio}\n`;
+    if (data.mediaPais[0] != "") {
+      plantilla += `Valor: ${data.mediaPais[0]}\n`;
+    } else {
+      plantilla += `Valor: 0\n`;
+    }
+    fs.writeFile(`resultados/${data.mediaPais[2]}-${anio}.txt`, plantilla, (err) => {
+      if (err) reject(err);
+      else resolve(`EL archivo resultados/${data.mediaPais[2]}-${anio}.txt se a Guardado Satisfactoriamente!`);
     });
-}
+  });
+};
 module.exports = {
-    crearArchivo
-}
+  crearArchivo,
+};

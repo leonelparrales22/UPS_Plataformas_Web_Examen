@@ -3,7 +3,7 @@ const colors = require("colors");
 const obtenerData = require("./controller/generar-data.controller").obtenerData;
 const crearArchivo = require("./controller/crear-json.controller").crearArchivo;
 // node app.js publicar -f="db/datos.csv" -c="ECU" -y=1997
-// node app.js guardar -f="db/API_IT.CEL.SETS_DS2_es_csv_v2_1004854.csv" -c="ECU" -y=1997 -o="HolaMundo
+// node app.js guardar -f="db/datos.csv" -c="ECU" -y=1997
 
 let data;
 const menu = () => {
@@ -23,7 +23,7 @@ const menu = () => {
       break;
     case "guardar":
       console.log("Generando Archivo...".blue);
-      crearArchivo(data.paisesAdyacentes.mayores, data.mediaPais, data.paisesAdyacentes.menores, data.mediaGlobal, data.top, argv.out)
+      crearArchivo(data, argv.anio)
         .then((mensaje) => console.log(colors.green(mensaje)))
         .catch((err) => console.log(colors.red(err)));
       break;
