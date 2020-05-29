@@ -11,11 +11,11 @@ const menu = () => {
   switch (comando) {
     case "publicar":
       console.log("---------------------------------------------------------".rainbow);
-      console.log(`Datos:`.rainbow, `${data.mediaPais[3]}`.yellow);
-      console.log(`País:`.rainbow, `${data.mediaPais[1]}`.green);
+      console.log(`Datos:`.rainbow, `${data.texto}`.yellow);
+      console.log(`País:`.rainbow, `${data.nombre_pais}`.green);
       console.log(`Año:`.rainbow, `${argv.anio}`.cyan);
-      if (data.mediaPais[0]!="") {
-        console.log(`Valor:`.rainbow, `${data.mediaPais[0]}`.bgBlack);
+      if (data.suscripcion!="") {
+        console.log(`Valor:`.rainbow, `${data.suscripcion}`.bgBlack);
       } else {
         console.log(`Valor:`.rainbow, `0`.bgBlack);
       }

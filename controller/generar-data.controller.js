@@ -35,7 +35,7 @@ const vectorAnio = async (anio) => {
   let anios = Object.values(informacion[3]);
   anio = anios.indexOf(anio);
   for (let index = 4; index < informacion.length; index++) {
-    datosPorAnio.push([informacion[index][anio], informacion[index][0], informacion[index][1],informacion[index][2]]);
+    datosPorAnio.push([informacion[index][anio], informacion[index][0], informacion[index][1], informacion[index][2]]);
   }
   return true;
 };
@@ -78,7 +78,6 @@ const comprobarAnio = (anio) => {
   });
 };
 
-
 /* Valor de suscripcion del pais y anio especificado */
 const _mediaPais = (codPais) => {
   dato = [];
@@ -91,7 +90,6 @@ const _mediaPais = (codPais) => {
   return dato;
 };
 
-
 /* Devulve toda la data para ser consumida */
 const obtenerData = async (codPais, anio, path) => {
   await cargarDatos(path);
@@ -101,7 +99,12 @@ const obtenerData = async (codPais, anio, path) => {
   await comprobarAnio(anio);
   await comprobarPais(codPais);
   let mediaPais = _mediaPais(codPais);
-  return { mediaPais };
+  return {
+    texto: mediaPais[3],
+    nombre_pais: mediaPais[1],
+    codigo_pais: mediaPais[2],
+    suscripcion: mediaPais[0],
+  };
 };
 
 module.exports = {

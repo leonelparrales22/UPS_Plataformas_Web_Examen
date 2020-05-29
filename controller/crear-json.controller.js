@@ -5,17 +5,17 @@ let crearArchivo = (data, anio) => {
     if (!fs.existsSync("resultados")) {
       fs.mkdirSync("resultados");
     }
-    plantilla = `Datos: ${data.mediaPais[3]}\n`;
-    plantilla += `País: ${data.mediaPais[1]}\n`;
+    plantilla = `Datos: ${data.texto}\n`;
+    plantilla += `País: ${data.nombre_pais}\n`;
     plantilla += `Año: ${anio}\n`;
-    if (data.mediaPais[0] != "") {
-      plantilla += `Valor: ${data.mediaPais[0]}\n`;
+    if (data.suscripcion != "") {
+      plantilla += `Valor: ${data.suscripcion}\n`;
     } else {
       plantilla += `Valor: 0\n`;
     }
-    fs.writeFile(`resultados/${data.mediaPais[2]}-${anio}.txt`, plantilla, (err) => {
+    fs.writeFile(`resultados/${data.codigo_pais}-${anio}.txt`, plantilla, (err) => {
       if (err) reject(err);
-      else resolve(`EL archivo resultados/${data.mediaPais[2]}-${anio}.txt se a Guardado Satisfactoriamente!`);
+      else resolve(`EL archivo resultados/${data.codigo_pais}-${anio}.txt se a Guardado Satisfactoriamente!`);
     });
   });
 };
