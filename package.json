@@ -18,6 +18,7 @@
   "homepage": "https://github.com/leonelparrales22/UPS_Plataformas_Web_Examen#readme",
   "dependencies": {
     "colors": "^1.4.0",
+    "neat-csv": "^5.2.0",
     "yargs": "^15.3.1"
   }
 }
