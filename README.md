@@ -1,9 +1,6 @@
 ## Plataformas Web P56 - Examen - Primer Parcial 
 
-Aplicación en NodeJS que permite leer los datos de las
-Suscripciones a telefonía celular móvil, publicadas por el Banco
-Mundial y publicar la suscripción de un determinado país en un
-año específico.
+Aplicación en NodeJS que permite leer los datos de las Personas que usan Internet (% de la población), publicadas por el Banco Mundial y publicar su porcentaje de un determinado país en un año específico.
 
 ## Comenzando 🚀
 
@@ -48,7 +45,7 @@ cd UPS_Plataformas_Web_Examen && npm install --save
 
 ## Ejecutando las pruebas ⚙️
 
-Descargar la data de la siguiente dirección web: [Suscripciones a telefonía celular móvil](http://api.worldbank.org/v2/es/indicator/IT.CEL.SETS?downloadformat=csv)
+Descargar la data en formato csv de la siguiente dirección web: [Personas que usan Internet (% de la población)](http://api.worldbank.org/v2/es/indicator/IT.CEL.SETS?downloadformat=csv)
 
 
 ### Comandos:
